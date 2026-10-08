@@ -8,6 +8,7 @@ import {
 } from 'expo-router/ui';
 import { SymbolView } from 'expo-symbols';
 import { Pressable, useColorScheme, View, StyleSheet } from 'react-native';
+import { useTheme } from '../stores/theme';
 
 import { ExternalLink } from './external-link';
 import { ThemedText } from './themed-text';
@@ -16,6 +17,8 @@ import { ThemedView } from './themed-view';
 import { Colors, MaxContentWidth, Spacing } from '@/constants/theme';
 
 export default function AppTabs() {
+  const { colors, dark } = useTheme();
+
   return (
     <Tabs>
       <TabSlot style={{ height: '100%' }} />
